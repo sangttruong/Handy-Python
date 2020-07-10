@@ -91,3 +91,12 @@ def step_decay_schedule(initial_lr=1e-3, decay_factor=0.75, step_size=10):
     return initial_lr * (decay_factor ** np.floor(epoch/step_size))
   
   return LearningRateScheduler(schedule)
+
+schedule = SGDRScheduler(min_lr=1e-5,
+                         max_lr=1e-2,
+                         steps_per_epoch=np.ceil(epoch_size/batch_size),
+                         lr_decay=0.9,
+                         cycle_length=5,
+                         mult_factor=1.5)
+
+schedule = step_decay_schedule(initial_lr=1e-4, decay_factor=0.75, step_size=2)
