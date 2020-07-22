@@ -1,3 +1,3 @@
-data.drop(['GameplayID'], axis=1)
+data.drop(['GameplayID'], axis=1, inplace = True)
 
-year = raw[raw.YEAR == 1977]
+data = data[data.GamestateNum == 0]
