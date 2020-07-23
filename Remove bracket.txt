@@ -1,3 +1,7 @@
 :%s/\[//g
 
 :%s/\]//g
+
+ssh ...
+cd GR/GinRummy/GR-CollectData
+nohup java GinRummyGame_Parallel_OHE_fix10 &
